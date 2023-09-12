@@ -12,7 +12,7 @@ def home(request):
 
 
 
-    #check login
+   # check login
     if request.method=="POST":
         username=request.POST['username']
         password=request.POST['password']
@@ -89,8 +89,16 @@ def update_record(request,pk):
         messages.success(request, 'Logged In First!')
         return redirect('home')
 
+# from .models import Post    
+# from django.shortcuts import render,redirect
+
+# def blog_page(request):
+#     post=Post.objects.get(title='abc')
     
-        
+
+#     context={'post':post}
+
+#     return render(request, '/home/tor/Desktop/django/CRM App/App/templates/index.html',{'post':post})
 
             
     

@@ -17,3 +17,8 @@ class Record(models.Model):
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
     
+# class Post(models.Model):
+#     contenet=models.TextField()
+#     # image=models.ImageField()
+#     title=models.CharField(max_length=200)
+#     posted_at=models.DateTimeField(auto_now=True)

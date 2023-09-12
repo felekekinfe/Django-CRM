@@ -10,3 +10,10 @@ urlpatterns = [
     path('add_record/',views.add_record,name='add_record'),
     path('update_record/<int:pk>',views.update_record,name='update_record')
 ]
+
+# from django.urls import path
+# from App import views
+
+# urlpatterns = [
+#     path('home/',views.blog_page,name='blogpage')
+# ]
