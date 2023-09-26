@@ -9,6 +9,7 @@ from .forms import AddForm
 
 def home(request):
     records=Record.objects.all()
+    print(request.user)
 
 
 
@@ -22,6 +23,7 @@ def home(request):
             login(request, user)
             messages.success(request, 'You Have Logged In')
             return redirect('home')
+
         else:
             messages.success(request, 'There Was Error')
     return render(request, 'App/templates/home.html',{'records':records})
@@ -88,7 +90,16 @@ def update_record(request,pk):
     else:
         messages.success(request, 'Logged In First!')
         return redirect('home')
+def search(request):
+    if request.user.is_authenticated:
 
+        if request.method=='POST':
+            name=request.GET.get('searchname')
+            getrecord=Record.objects.filter(first_name=name)
+            return render(request, 'search.html',{'record':getrecord})
+    else:
+        
+        return redirect('home')
 # from .models import Post    
 # from django.shortcuts import render,redirect
 

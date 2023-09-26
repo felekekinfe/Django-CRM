@@ -12,13 +12,18 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'logout' %}">Logout</a>
           </li>
+          <li class="nav-item">
+            <form method='post'>
+              <input type='text' name='searchname'/>
+              <button type='submit'><a href="{% url 'search' %}">Search</a></button>
+            </form>
+            
+          </li>
           {% else %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'register' %}">Register</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'home' %}">Login</a>
-          </li>
+          
           {% endif %}
         </ul>
        
